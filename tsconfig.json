@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "commonjs",
+    "module": "esnext",
     "lib": ["ES2022"],
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "rootDir": "src",
     "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "sourceMap": true,
-
-    // Optional: path alias like "@/…"
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]

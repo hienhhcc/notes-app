@@ -1,13 +1,13 @@
-import { env } from "src/data/server.ts";
-import * as schema from "./schema.ts";
 import { drizzle } from "drizzle-orm/node-postgres";
+import { Pool } from "pg";
+import * as schema from "./schema";
 
-export const db = drizzle({
-  schema,
-  connection: {
-    host: env.DB_HOST,
-    user: env.DB_USER,
-    password: env.DB_PASSWORD,
-    database: env.DB_NAME,
-  },
+const pool = new Pool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  ssl: false,
 });
+
+export const db = drizzle(pool, { schema, logger: true });

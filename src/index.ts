@@ -18,11 +18,11 @@ app.use((req, res, next: NextFunction) => {
 
 app.use(express.json());
 
+app.use("/notes", notesRouter);
+
 app.use("/", (_req, res) => {
   res.send("hello");
 });
-
-app.use("/notes", notesRouter);
 
 const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
   console.error(err.stack);
