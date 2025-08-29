@@ -7,7 +7,7 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
-export const notes = pgTable("notes", {
+export const NoteTable = pgTable("notes", {
   id: uuid("id").defaultRandom().primaryKey(),
   title: varchar("title", { length: 256 }).notNull(),
   content: text("content").notNull(),
