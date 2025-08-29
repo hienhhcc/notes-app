@@ -1,8 +1,8 @@
-import { db } from "@/drizzle/db.js";
-import { NoteTable } from "@/drizzle/schema.js";
-import { validate } from "@/middleware/validate.js";
-import { createNoteSchema } from "@/schema/note.js";
 import express, { Request, Response } from "express";
+import { db } from "../drizzle/db.ts";
+import { NoteTable } from "../drizzle/schema.ts";
+import { validate } from "../middleware/validate.ts";
+import { createNoteSchema } from "../schema/note.ts";
 
 export const notesRouter = express.Router();
 

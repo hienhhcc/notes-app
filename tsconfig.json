@@ -1,19 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "nodenext",
-    "outDir": "./dist",
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["ES2022"],
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "nodenext",
-    "noEmit": true,
-    "allowJs": true,
+    "sourceMap": true,
 
-    "baseUrl": "./src",
+    // Optional: path alias like "@/…"
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["src/*"]
     }
   },
-  "exclude": ["node_modules"]
+  "include": ["src"]
 }
