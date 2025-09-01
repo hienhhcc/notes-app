@@ -12,3 +12,10 @@ export const createNoteSchema = z
       .max(300, "Content must not be exceed 300 characters"),
   })
   .strict();
+
+export const updateNoteSchema = z
+  .object({
+    ...createNoteSchema.shape,
+    id: z.string(),
+  })
+  .strict();
